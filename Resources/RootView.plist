@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>User Agent Faker</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>General</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>default</key>
+			<true/>
+			<key>key</key>
+			<string>enabled</string>
+			<key>PostNotification</key>
+			<string>com.conradkramer.uafaker.settings</string>
+			<key>defaults</key>
+			<string>com.conradkramer.uafaker</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4</string>
+			<key>defaults</key>
+			<string>com.conradkramer.uafaker</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>useragent</string>
+			<key>id</key>
+			<string>useragent</string>
+			<key>label</key>
+			<string>User Agent</string>
+			<key>set</key>
+			<string>setUserAgentValue:specifier:</string>
+			<key>PostNotification</key>
+			<string>com.conradkramer.uafaker.settings</string>
+			<key>validTitles</key>
+			<array>
+				<string>Google Chrome</string>
+				<string>Firefox 3.6</string>
+				<string>Safari 5</string>
+				<string>Opera 10</string>
+				<string>Internet Explorer 8</string>
+				<string>Apple iPad</string>
+				<string>Custom</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4</string>
+				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8</string>
+				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.17.8 (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8</string>
+				<string>Opera/9.80 (Windows NT 6.1; U; en) Presto/2.2.15 Version/10.00</string>
+				<string>Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 1.1.4322)</string>
+				<string>Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10</string>
+				<string>Custom</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>key</key>
+			<string>customuseragent</string>
+			<key>id</key>
+			<string>customuseragent</string>
+			<key>label</key>
+			<string></string>
+			<key>placeholder</key>
+			<string>Custom User Agent</string>
+			<key>detail</key>
+			<string>PSDetailController</string>
+			<key>PostNotification</key>
+			<string>com.conradkramer.uafaker.settings</string>
+			<key>default</key>
+			<string></string>
+			<key>defaults</key>
+			<string>com.conradkramer.uafaker</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>label</key>
+			<string>Applications</string>
+			<key>isController</key>
+			<true/>
+			<key>bundle</key>
+			<string>AppList</string>
+			<key>ALNavigationTitle</key>
+			<string>Applications</string>
+			<key>ALChangeNotification</key>
+			<string>com.conradkramer.uafaker.settings</string>
+			<key>ALAllowsSelection</key>
+			<false/>
+			<key>ALSettingsPath</key>
+			<string>/var/mobile/Library/Preferences/com.conradkramer.uafaker.plist</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+	    	<string>PSGroupCell</string>
+	    	<key>footerText</key>
+	    	<string>© 2010 Conrad Kramer</string>
+	    </dict>
+	</array>
+</dict>
+</plist>
