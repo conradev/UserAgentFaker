@@ -1,27 +1,19 @@
-##
-#  UAFaker + Settings Bundle
-##
-
-# Note: The SBSettings toggle is seperated from the main package and is built sepearately
-
-# This package uses Ryan Petrich's AppList to choose and enable applications (https://github.com/rpetrich/AppList)
+include theos/makefiles/common.mk
 
 TWEAK_NAME = UAFaker
 UAFaker_FILES = CFNetworkHooks.xm
 UAFaker_FRAMEWORKS = CFNetwork CoreFoundation
 
-BUNDLE_NAME = UserAgentFaker
-UserAgentFaker_FILES = UAFakerSettingsController.m
-UserAgentFaker_INSTALL_PATH = /System/Library/PreferenceBundles/
-UserAgentFaker_FRAMEWORKS = UIKit
-UserAgentFaker_PRIVATE_FRAMEWORKS = Preferences
+BUNDLE_NAME = UAFakerSettings
+UAFakerSettings_FILES = UARootListController.m
+UAFakerSettings_INSTALL_PATH = /Library/PreferenceBundles/
+UAFakerSettings_FRAMEWORKS = UIKit
+UAFakerSettings_PRIVATE_FRAMEWORKS = Preferences
 
-include theos/makefiles/common.mk
+LIBRARY_NAME = Toggle
+Toggle_FILES = Toggle.mm
+Toggle_INSTALL_PATH = /var/mobile/Library/SBSettings/Toggles/UAFaker/
+
 include $(THEOS_MAKE_PATH)/tweak.mk
 include $(THEOS_MAKE_PATH)/bundle.mk
-
-internal-stage::
-	$(ECHO_NOTHING)mkdir -p $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences$(ECHO_END)
-	$(ECHO_NOTHING)cp UAFakerPrefEntry.plist $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences/UAFaker.plist$(ECHO_END)
-
-run : package install
+include $(THEOS_MAKE_PATH)/library.mk

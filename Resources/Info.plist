@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>UserAgentFaker</string>
+	<string>UAFakerSettings</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.conradkramer.uafakerpreferencebundle</string>
+	<string>com.conradkramer.uafaker</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -23,6 +23,6 @@
 	<key>MinimumOSVersion</key>
 	<string>3.0</string>
 	<key>NSPrincipalClass</key>
-	<string>UAFakerSettingsController</string>
+	<string>UARootListController</string>
 </dict>
 </plist>

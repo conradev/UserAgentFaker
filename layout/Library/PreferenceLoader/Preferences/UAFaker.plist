@@ -1,6 +1,6 @@
 {
 	entry = {
-		bundle = UserAgentFaker;
+		bundle = UAFakerSettings;
 		cell = PSLinkCell;
 		icon = "UAFaker.png";
 		isController = 1;

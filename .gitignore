@@ -7,3 +7,7 @@ Common.h
 _
 obj
 .debmake
+Icon*
+.theos
+*.bak
+*.save
