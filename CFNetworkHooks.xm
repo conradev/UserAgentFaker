@@ -11,18 +11,29 @@ static BOOL isEnabled = NO;
 extern "C" CFDictionaryRef CFURLRequestCopyAllHTTPHeaderFields();
 
 static CFDictionaryRef (*original_CFURLRequestCopyAllHTTPHeaderFields)();
+static void (*original_CFHTTPMessageSetHeaderFieldValue)(CFHTTPMessageRef message, CFStringRef headerField, CFStringRef value);
 
 CFDictionaryRef custom_CFURLRequestCopyAllHTTPHeaderFields() {
 	
 	NSDictionary *originalHeaders = (NSDictionary *)original_CFURLRequestCopyAllHTTPHeaderFields();
-    NSMutableDictionary *headersDict = [[NSMutableDictionary alloc] initWithDictionary:originalHeaders];
-    [originalHeaders release];
 
     if (userAgent && isEnabled) {
+        NSLog(@"CBK :: Applying hooks!!");
+        NSMutableDictionary *headersDict = [[NSMutableDictionary alloc] initWithDictionary:originalHeaders];
+        [originalHeaders release];
         [headersDict setObject:userAgent forKey:@"User-Agent"];
+        return (CFDictionaryRef)headersDict;
     }
     
-    return (CFDictionaryRef)headersDict;
+    return (CFDictionaryRef)originalHeaders;
+}
+
+void custom_CFHTTPMessageSetHeaderFieldValue(CFHTTPMessageRef message, CFStringRef headerField, CFStringRef value) {
+	original_CFHTTPMessageSetHeaderFieldValue(message, headerField, value);
+    
+	if (userAgent && isEnabled) {
+        original_CFHTTPMessageSetHeaderFieldValue(message, CFSTR("User-Agent"), (CFStringRef)userAgent);
+	}
 }
 
 void reloadSettings() {
@@ -73,7 +84,11 @@ void receivedReloadNotfication(CFNotificationCenterRef center, void *observer, C
     reloadSettings();
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)&receivedReloadNotfication, CFSTR("com.conradkramer.uafaker.settings"), NULL, NULL);
     
-	MSHookFunction(CFURLRequestCopyAllHTTPHeaderFields, custom_CFURLRequestCopyAllHTTPHeaderFields, &original_CFURLRequestCopyAllHTTPHeaderFields);
+    if (kCFCoreFoundationVersionNumber >= 675.00f) { // iOS 4 or 5
+        MSHookFunction(CFURLRequestCopyAllHTTPHeaderFields, custom_CFURLRequestCopyAllHTTPHeaderFields, &original_CFURLRequestCopyAllHTTPHeaderFields); // Screws up iOS 4
+    } else {
+        MSHookFunction(CFHTTPMessageSetHeaderFieldValue, custom_CFHTTPMessageSetHeaderFieldValue, &original_CFHTTPMessageSetHeaderFieldValue); // Doesn't work on iOS 5
+    }
     
     [pool release];
 }
