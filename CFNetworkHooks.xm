@@ -16,16 +16,14 @@ static void (*original_CFHTTPMessageSetHeaderFieldValue)(CFHTTPMessageRef messag
 CFDictionaryRef custom_CFURLRequestCopyAllHTTPHeaderFields() {
 	
 	NSDictionary *originalHeaders = (NSDictionary *)original_CFURLRequestCopyAllHTTPHeaderFields();
-
-    if (userAgent && isEnabled) {
-        NSLog(@"CBK :: Applying hooks!!");
-        NSMutableDictionary *headersDict = [[NSMutableDictionary alloc] initWithDictionary:originalHeaders];
-        [originalHeaders release];
+    NSMutableDictionary *headersDict = [[NSMutableDictionary alloc] initWithDictionary:originalHeaders];
+    [originalHeaders release];
+    
+    if (userAgent && isEnabled) {        
         [headersDict setObject:userAgent forKey:@"User-Agent"];
-        return (CFDictionaryRef)headersDict;
     }
     
-    return (CFDictionaryRef)originalHeaders;
+    return (CFDictionaryRef)headersDict;
 }
 
 void custom_CFHTTPMessageSetHeaderFieldValue(CFHTTPMessageRef message, CFStringRef headerField, CFStringRef value) {
