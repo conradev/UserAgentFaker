@@ -30,13 +30,13 @@
 			<key>cell</key>
 			<string>PSLinkListCell</string>
 			<key>default</key>
-			<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4</string>
+            <integer>0</integer>
 			<key>defaults</key>
 			<string>com.conradkramer.uafaker</string>
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>key</key>
-			<string>useragent</string>
+			<string>UAUserAgent</string>
 			<key>id</key>
 			<string>useragent</string>
 			<key>label</key>
@@ -48,22 +48,24 @@
 			<key>validTitles</key>
 			<array>
 				<string>Google Chrome</string>
-				<string>Firefox 3.6</string>
-				<string>Safari 5</string>
-				<string>Opera 10</string>
-				<string>Internet Explorer 8</string>
+				<string>Firefox</string>
+				<string>Safari</string>
+				<string>Opera</string>
+				<string>Internet Explorer</string>
 				<string>Apple iPad</string>
+                <string>Apple iPhone</string>
 				<string>Custom</string>
 			</array>
 			<key>validValues</key>
 			<array>
-				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.125 Safari/533.4</string>
-				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8</string>
-				<string>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.17.8 (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8</string>
-				<string>Opera/9.80 (Windows NT 6.1; U; en) Presto/2.2.15 Version/10.00</string>
-				<string>Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 1.1.4322)</string>
-				<string>Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10</string>
-				<string>Custom</string>
+                <integer>0</integer>
+                <integer>1</integer>
+                <integer>2</integer>
+                <integer>3</integer>
+                <integer>4</integer>
+                <integer>5</integer>
+                <integer>6</integer>
+                <integer>-1</integer>
 			</array>
 		</dict>
 		<dict>

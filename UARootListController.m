@@ -14,9 +14,9 @@
 	[self setPreferenceValue:value specifier:spec];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 
-	if ([value isEqualToString:@"Custom"] && ![self specifierForID:@"customuseragent"]) {
+	if ([value intValue] < 0 && ![self specifierForID:@"customuseragent"]) {
 		[self insertSpecifier:self.customSpec afterSpecifierID:@"useragent" animated:NO];
-	} else if (![value isEqualToString:@"Custom"] && [self specifierForID:@"customuseragent"]) {
+	} else if ([value intValue] >= 0 && [self specifierForID:@"customuseragent"]) {
 		[self removeSpecifierID:@"customuseragent"];
 	}
 }
@@ -34,7 +34,7 @@
         BOOL isCustom = NO;
         for (PSSpecifier *spec in specs) {
             if ([[[spec properties] objectForKey:@"id"] isEqualToString:@"useragent"]) {
-                isCustom = [(NSString *)[self readPreferenceValue:spec] isEqualToString:@"Custom"];
+                isCustom = ([(NSNumber *)[self readPreferenceValue:spec] intValue] < 0);
             }
         }
 
