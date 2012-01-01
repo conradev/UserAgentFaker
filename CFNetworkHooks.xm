@@ -19,8 +19,8 @@ CFDictionaryRef custom_CFURLRequestCopyAllHTTPHeaderFields(CFURLRequestRef reque
 
     CFDictionaryRef originalHeaders = original_CFURLRequestCopyAllHTTPHeaderFields(request);
 
-    if (userAgent && isEnabled) {
-        CFMutableDictionaryRef newHeaders = CFDictionaryCreateMutableCopy(kCFAllocatorDefault, 0, originalHeaders);
+    if (userAgent && isEnabled && originalHeaders) {
+        CFMutableDictionaryRef newHeaders = CFDictionaryCreateMutableCopy(CFGetAllocator(originalHeaders), 0, originalHeaders);
         CFRelease(originalHeaders);
         CFDictionarySetValue (newHeaders, CFSTR("User-Agent"), (CFStringRef)userAgent);
         return newHeaders;
