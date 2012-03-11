@@ -1,8 +1,9 @@
 include theos/makefiles/common.mk
 
 TWEAK_NAME = UAFaker
-UAFaker_FILES = CFNetworkHooks.xm
-UAFaker_FRAMEWORKS = CFNetwork CoreFoundation
+UAFaker_FILES = WebKitHooks.xm
+UAFaker_FRAMEWORKS = CoreFoundation
+UAFaker_PRIVATE_FRAMEWORKS = WebKit
 
 BUNDLE_NAME = UAFakerSettings
 UAFakerSettings_FILES = UARootListController.m
