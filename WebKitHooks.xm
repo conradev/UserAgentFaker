@@ -45,25 +45,25 @@ void reloadSettings() {
         int userAgentSetting = [settingsDict objectForKey:@"UAUserAgent"] ? [[settingsDict objectForKey:@"UAUserAgent"] intValue] : 0;
         switch (userAgentSetting) {
             case 0:
-                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7";
+                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.54 Safari/535.19"; // Chrome
                 break;
             case 1:
-                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2; rv:9.0) Gecko/20100101 Firefox/9.0";
+                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:10.0.2) Gecko/20100101 Firefox/10.0.2"; // Firefox
                 break;
             case 2:
-                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22";
+                userAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10"; // Safari
                 break;
             case 3:
-                userAgent = @"Opera/9.80 (Macintosh; Intel Mac OS X 10_7_2; U; en) Presto/2.9.168 Version/11.60";
+                userAgent = @"Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.61"; // Opera
                 break;
             case 4:
-                userAgent = @"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)";
+                userAgent = @"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)"; // Internet Explorer
                 break;
             case 5:
-                userAgent = @"Mozilla/5.0 (iPad; CPU OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3";
+                userAgent = @"Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/7534.48.3"; // iPad
                 break;
             case 6:
-                userAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3";
+                userAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/7534.48.3"; // iPhone
                 break;
             default:
                 NSString *customUserAgent = [settingsDict objectForKey:@"customuseragent"];
