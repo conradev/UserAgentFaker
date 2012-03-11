@@ -2,7 +2,7 @@ Package: com.conradkramer.uafaker
 Depends: preferenceloader, mobilesubstrate, applist (>= 1.1)
 Conflicts: com.conradkramer.sbsuafaker, sbsuafaker
 Name: User Agent Faker
-Version: 1.3
+Version: 1.4
 Architecture: iphoneos-arm
 Description: Fakes the User Agent of the device.
 Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=useragentfakerData
