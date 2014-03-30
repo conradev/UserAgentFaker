@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>User Agent Faker 7</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.sharedroutine.useragentfaker7</string>
+			<key>key</key>
+			<string>kEnabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>alternateColors</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>UserAgentFakerDidUpdateSettingsNotification</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.74.9 (KHTML, like Gecko) Version/7.0.2 Safari/537.74.9</string>
+			<key>defaults</key>
+			<string>com.sharedroutine.useragentfaker7</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>kUserAgentString</string>
+			<key>id</key>
+			<string>UserAgentSelection</string>
+			<key>label</key>
+			<string>User Agent</string>
+			<key>PostNotification</key>
+			<string>UserAgentFakerDidUpdateSettingsNotification</string>
+			<key>valuesDataSource</key>
+			<string>getUserAgentValues</string>
+			<key>validTitles</key>
+			<array>
+				<string>Safari</string>
+				<string>Opera</string>
+				<string>Firefox</string>
+				<string>Google Chrome</string>
+				<string>Internet Explorer</string>
+				<string>Apple iPad Safari</string>
+				<string>Apple iPhone Safari</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Custom User Agent</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.sharedroutine.useragentfaker7</string>
+			<key>key</key>
+			<string>kWantsCustomUserAgent</string>
+			<key>label</key>
+			<string>Custom User Agent</string>
+			<key>set</key>
+			<string>setCustomUserAgentEnabled:forSpecifier:</string>
+			<key>id</key>
+			<string>CustomUserAgentSwitch</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>key</key>
+			<string>kCustomUserAgentString</string>
+			<key>id</key>
+			<string>CustomUserAgentString</string>
+			<key>label</key>
+			<string></string>
+			<key>placeholder</key>
+			<string>Custom User Agent</string>
+			<key>detail</key>
+			<string>PSDetailController</string>
+			<key>default</key>
+			<string></string>
+			<key>defaults</key>
+			<string>com.sharedroutine.useragentfaker7</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Enabled Applications</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.sharedroutine.useragentfaker7</string>
+			<key>key</key>
+			<string>kEnableAllApplications</string>
+			<key>label</key>
+			<string>Enable for all Apps</string>
+			<key>set</key>
+			<string>setEnableAllApplications:forSpecifier:</string>
+			<key>id</key>
+			<string>AllAppsEnableSwitch</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>id</key>
+			<string>AppLinkSpecifier</string>
+			<key>detail</key>
+			<string>UAFApplicationViewController</string>
+			<key>label</key>
+			<string>Enabled Applications</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Copyright 2014 Jack (@sharedRoutine) &amp; conradev</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>User Agent Faker 7</string>
+</dict>
+</plist>

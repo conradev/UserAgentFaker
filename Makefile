@@ -1,20 +1,14 @@
+ARCHS = armv7 arm64
+
 include theos/makefiles/common.mk
 
-TWEAK_NAME = UAFaker
-UAFaker_FILES = WebKitHooks.xm
-UAFaker_FRAMEWORKS = CoreFoundation
-UAFaker_PRIVATE_FRAMEWORKS = WebKit
-
-BUNDLE_NAME = UAFakerSettings
-UAFakerSettings_FILES = UARootListController.m
-UAFakerSettings_INSTALL_PATH = /Library/PreferenceBundles/
-UAFakerSettings_FRAMEWORKS = UIKit
-UAFakerSettings_PRIVATE_FRAMEWORKS = Preferences
-
-LIBRARY_NAME = Toggle
-Toggle_FILES = Toggle.mm
-Toggle_INSTALL_PATH = /var/mobile/Library/SBSettings/Toggles/UAFaker/
+TWEAK_NAME = UserAgentFaker7
+UserAgentFaker7_FILES = Tweak.xm
+UserAgentFaker7_PRIVATE_FRAMEWORKS = WebKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-include $(THEOS_MAKE_PATH)/bundle.mk
-include $(THEOS_MAKE_PATH)/library.mk
+
+after-install::
+	install.exec "killall -9 SpringBoard"
+SUBPROJECTS += useragentfaker7prefs
+include $(THEOS_MAKE_PATH)/aggregate.mk
