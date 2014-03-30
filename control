@@ -1,0 +1,9 @@
+Package: com.sharedRoutine.useragentfaker7
+Name: UserAgentFaker7
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: sharedRoutine
+Author: sharedRoutine
+Section: Tweaks

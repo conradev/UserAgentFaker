@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = UserAgentFaker7Prefs;
+		cell = PSLinkCell;
+		detail = "UserAgentFaker7PrefsListController";
+		icon = "UserAgentFaker7Prefs.png";
+		isController = 1;
+		label = "User Agent Faker 7";
+	};
+}
