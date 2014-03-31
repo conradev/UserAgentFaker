@@ -43,13 +43,13 @@ static char * const UAFakerTokenKey = "UAFakerTokenKey";
         __block __typeof__(self) blockSelf = self;
         notify_register_dispatch(UAFakerPreferencesNotification, &token, dispatch_get_main_queue(), ^(int token) {
             NSDictionary *userAgents = @{
-                @(UAFakerUserAgentChrome): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.54 Safari/535.19",
-                @(UAFakerUserAgentFirefox): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:10.0.2) Gecko/20100101 Firefox/10.0.2",
-                @(UAFakerUserAgentSafari): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10",
-                @(UAFakerUserAgentOpera): @"Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.61",
-                @(UAFakerUserAgentIE): @"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)",
-                @(UAFakerUserAgentiPad): @"Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/7534.48.3",
-                @(UAFakerUserAgentiPhone): @"Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/7534.48.3"
+                @(UAFakerUserAgentChrome): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.92 Safari/537.36",
+                @(UAFakerUserAgentFirefox): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:24.0) Gecko/20100101 Firefox/24.0",
+                @(UAFakerUserAgentSafari): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.74.9 (KHTML, like Gecko) Version/7.0.2 Safari/537.74.9",
+                @(UAFakerUserAgentOpera): @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36 OPR/20.0.1387.82",
+                @(UAFakerUserAgentIE): @"Mozilla/5.0 (IE 11.0; Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C; rv:11.0) like Gecko",
+                @(UAFakerUserAgentiPad): @"Mozilla/5.0 (iPad; CPU OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D167 Safari/9537.53",
+                @(UAFakerUserAgentiPhone): @"Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D167 Safari/9537.53"
             };
             NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:UAFakerPreferencesPath];
             NSString *userAgent = preferences[UAFakerUserAgentKey] ? userAgents[preferences[UAFakerUserAgentKey]] : preferences[UAFakerCustomUserAgentKey];
