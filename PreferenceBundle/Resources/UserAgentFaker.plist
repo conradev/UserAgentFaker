@@ -9,94 +9,30 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>General</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
+			<key>id</key>
+			<string>UAEnabled</string>
 			<key>label</key>
 			<string>Enabled</string>
 			<key>default</key>
 			<true/>
 			<key>key</key>
 			<string>enabled</string>
-			<key>PostNotification</key>
-			<string>com.conradkramer.uafaker.settings</string>
-			<key>defaults</key>
-			<string>com.conradkramer.uafaker</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSLinkListCell</string>
-			<key>default</key>
-            <integer>0</integer>
-			<key>defaults</key>
-			<string>com.conradkramer.uafaker</string>
-			<key>detail</key>
-			<string>PSListItemsController</string>
-			<key>key</key>
-			<string>UAUserAgent</string>
-			<key>id</key>
-			<string>useragent</string>
-			<key>label</key>
-			<string>User Agent</string>
 			<key>set</key>
-			<string>setUserAgentValue:specifier:</string>
+			<string>setEnabledValue:specifier:</string>
 			<key>PostNotification</key>
-			<string>com.conradkramer.uafaker.settings</string>
-			<key>validTitles</key>
-			<array>
-				<string>Google Chrome</string>
-				<string>Firefox</string>
-				<string>Safari</string>
-				<string>Opera</string>
-				<string>Internet Explorer</string>
-				<string>Apple iPad</string>
-                <string>Apple iPhone</string>
-				<string>Custom</string>
-			</array>
-			<key>validValues</key>
-			<array>
-                <integer>0</integer>
-                <integer>1</integer>
-                <integer>2</integer>
-                <integer>3</integer>
-                <integer>4</integer>
-                <integer>5</integer>
-                <integer>6</integer>
-                <integer>-1</integer>
-			</array>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSEditTextCell</string>
-			<key>key</key>
-			<string>customuseragent</string>
-			<key>id</key>
-			<string>customuseragent</string>
-			<key>label</key>
-			<string></string>
-			<key>placeholder</key>
-			<string>Custom User Agent</string>
-			<key>detail</key>
-			<string>PSDetailController</string>
-			<key>PostNotification</key>
-			<string>com.conradkramer.uafaker.settings</string>
-			<key>default</key>
-			<string></string>
+			<string>com.conradkramer.uafaker.preferences</string>
 			<key>defaults</key>
 			<string>com.conradkramer.uafaker</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string></string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSLinkCell</string>
+			<key>id</key>
+			<string>UAApplications</string>
 			<key>label</key>
 			<string>Applications</string>
 			<key>isController</key>
@@ -106,18 +42,80 @@
 			<key>ALNavigationTitle</key>
 			<string>Applications</string>
 			<key>ALChangeNotification</key>
-			<string>com.conradkramer.uafaker.settings</string>
+			<string>com.conradkramer.uafaker.preferences</string>
 			<key>ALAllowsSelection</key>
 			<false/>
+			<key>ALSettingsDefaultValue</key>
+			<true/>
 			<key>ALSettingsPath</key>
 			<string>/var/mobile/Library/Preferences/com.conradkramer.uafaker.plist</string>
 		</dict>
 		<dict>
 			<key>cell</key>
-	    	<string>PSGroupCell</string>
-	    	<key>footerText</key>
-	    	<string>© 2010-2011 Conrad Kramer</string>
-	    </dict>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>id</key>
+			<string>UAUserAgent</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>com.conradkramer.uafaker</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>UAUserAgent</string>
+			<key>label</key>
+			<string>User Agent</string>
+			<key>set</key>
+			<string>setUserAgentValue:specifier:</string>
+			<key>PostNotification</key>
+			<string>com.conradkramer.uafaker.preferences</string>
+			<key>validTitles</key>
+			<array>
+				<string>Google Chrome</string>
+				<string>Firefox</string>
+				<string>Safari</string>
+				<string>Opera</string>
+				<string>Internet Explorer</string>
+				<string>Apple iPad</string>
+				<string>Apple iPhone</string>
+				<string>Custom</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>-1</integer>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>id</key>
+			<string>UACustomUserAgent</string>
+			<key>key</key>
+			<string>customuseragent</string>
+			<key>placeholder</key>
+			<string>Custom User Agent</string>
+			<key>PostNotification</key>
+			<string>com.conradkramer.uafaker.preferences</string>
+			<key>defaults</key>
+			<string>com.conradkramer.uafaker</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>© 2010-2014 Conrad Kramer</string>
+		</dict>
 	</array>
 </dict>
 </plist>

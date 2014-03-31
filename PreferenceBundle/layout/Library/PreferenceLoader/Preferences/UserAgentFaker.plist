@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = UserAgentFakerSettings;
+		cell = PSLinkCell;
+		icon = "UserAgentFaker.png";
+		isController = 1;
+		label = "User Agent Faker";
+		id = "USER_AGENT_FAKER_ID";
+	};
+}
